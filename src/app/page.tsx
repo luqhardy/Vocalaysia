@@ -6,6 +6,10 @@ import { MapView } from '@/components/MapView';
 import Image from 'next/image';
 
 // This page is a Server Component, so we can make it async and fetch data directly.
+// We're setting revalidate to 60 seconds. This means Vercel will cache the page
+// but regenerate it if a request comes in after 60 seconds, ensuring data is fresh
+// without hitting the database on every single request.
+export const revalidate = 60;
 
 export default async function HomePage() {
   
@@ -36,6 +40,7 @@ export default async function HomePage() {
   const states: MalaysianState[] = stateRes.data || [];
   const totalVotes: number = voteCountRes.count || 0;
   const votes: { producer_id: number; state_id: number }[] = votesRes.data || [];
+  const lastUpdated = new Date().toISOString();
 
   // Calculate top-voted producer per state
   const topProducerByState: Record<number, Producer | null> = {};
@@ -68,7 +73,7 @@ export default async function HomePage() {
       </div>
 
       <div className="relative w-full max-w-4xl">
-        <ResultsDisplay totalVotes={totalVotes} />
+        <ResultsDisplay totalVotes={totalVotes} lastUpdated={lastUpdated} />
       </div>
 
       <main className="w-full flex justify-center">
