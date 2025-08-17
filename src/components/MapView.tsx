@@ -30,22 +30,21 @@ const stateCoordinates: Record<string, { x: number; y: number }> = {
 export const MapView: React.FC<MapViewProps> = ({ states, topProducerByState }) => {
   return (
     <div
-      className="w-full max-w-[600px] aspect-[1000/420] min-h-[140px] px-0 mx-auto"
+      className="w-full max-w-[600px] px-0 md:px-0 mx-auto"
       style={{
         position: 'relative',
         width: '100%',
         maxWidth: '600px',
-        aspectRatio: '1000/420',
-        minHeight: '140px',
         height: 'auto',
       }}
     >
-      {/* keep image aligned to top so svg sits higher in the box */}
+      {/* Use intrinsic sizing so container height matches the SVG exactly and removes extra whitespace */}
       <Image
         src="/malaysia.svg"
         alt="Map of Malaysia"
-        fill
-        style={{ objectFit: 'contain', objectPosition: 'top center' }}
+        width={1000}
+        height={420}
+        style={{ width: '100%', height: 'auto', objectFit: 'contain', objectPosition: 'top center' }}
       />
 
       {states.map((state) => {

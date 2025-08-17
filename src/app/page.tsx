@@ -12,9 +12,9 @@ export default async function HomePage() {
   const Header: React.FC = () => (
     <header className="text-center p-6 rounded-xl">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-600 tracking-wider">
-            <Image src="Vocalaysia.png" alt="Icon" width={160} height={160} className="inline-block h-40 w-auto align-middle mr-2" /> 
+            <Image src="/Vocalaysia.png" alt="Icon" width={160} height={160} className="inline-block h-40 w-160 h-auto align-middle mr-2" /> 
         </h1>
-        <p className="text-gray-500 mt-2">Japanese Analyzer (Kuromoji & Jisho)</p>
+        <p className="text-gray-500 text-xs mt-2"> My Japanese friends keep asking me about the Malaysians' favorite VocaloP. It's time for a definitive answer. <br /> Built with Next.js, React, Tailwind CSS, Typescript, Vercel, Supabase </p>
     </header>
 );
   // Create a server-side Supabase client for this one-time fetch
@@ -60,12 +60,10 @@ export default async function HomePage() {
 
   return (
     <div className="bg-[#f0f4f5] min-h-screen font-sans flex flex-col items-center justify-center p-4">
-      <header className="text-center mb-8">
-
-      </header>
+      <Header />
 
       {/* Map View Section */}
-      <div className="mb-12">
+      <div className="mb-0">
         <MapView states={states} topProducerByState={topProducerByState} />
       </div>
 
