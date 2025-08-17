@@ -14,7 +14,7 @@ export default async function HomePage() {
         <h1 className="text-4xl md:text-5xl font-bold text-blue-600 tracking-wider">
             <Image src="/Vocalaysia.png" alt="Icon" width={160} height={160} className="inline-block h-40 w-160 h-auto align-middle mr-2" /> 
         </h1>
-        <p className="text-gray-500 text-xs mt-2"> My Japanese friends keep asking me about the Malaysians' favorite VocaloP. It's time for a definitive answer. <br /> Built with Next.js, React, Tailwind CSS, Typescript, Vercel, Supabase </p>
+        <p className="text-gray-500 text-xs mt-2"> My Japanese friends keep asking me about the Malaysians&apos; favorite VocaloP. It&apos;s time for a definitive answer. <br /> Built with Next.js, React, Tailwind CSS, Typescript, Vercel, Supabase </p>
     </header>
 );
   // Create a server-side Supabase client for this one-time fetch
