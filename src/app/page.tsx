@@ -4,6 +4,7 @@ import { ResultsDisplay } from '@/components/ResultsDisplay';
 import { Producer, MalaysianState } from '@/types';
 import { MapView } from '@/components/MapView';
 import Image from 'next/image';
+import { TopProducers } from '@/components/TopProducers';
 
 // This page is a Server Component, so we can make it async and fetch data directly.
 // We're setting revalidate to 60 seconds. This means Vercel will cache the page
@@ -68,13 +69,14 @@ export default async function HomePage() {
       <Header />
 
       {/* Map View Section */}
-      <div className="mb-0">
+      <div className="mb-0 justify-center w-full w-full max-w-4xl">
         <MapView states={states} topProducerByState={topProducerByState} />
+        <ResultsDisplay totalVotes={totalVotes} lastUpdated={lastUpdated} />
+        <TopProducers producers={producers} votes={votes} />
       </div>
 
-      <div className="relative w-full max-w-4xl">
-        <ResultsDisplay totalVotes={totalVotes} lastUpdated={lastUpdated} />
-      </div>
+
+
 
       <main className="w-full flex justify-center">
         <VotingForm producers={producers} states={states} />
