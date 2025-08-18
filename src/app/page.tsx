@@ -5,6 +5,7 @@ import { Producer, MalaysianState } from '@/types';
 import { MapView } from '@/components/MapView';
 import Image from 'next/image';
 import { TopProducers } from '@/components/TopProducers';
+import { Analytics } from "@vercel/analytics/next"
 
 // This page is a Server Component, so we can make it async and fetch data directly.
 // We're setting revalidate to 60 seconds. This means Vercel will cache the page
@@ -92,6 +93,16 @@ export default async function HomePage() {
           <a href="https://luqmanhadi.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:underline">Visit luqmanhadi.com for more projects like these!</a>
         </div>
       </footer>
+       <Analytics />
     </div>
   );
 }
+
+// Include Vercel Analytics to track page views and interactions
+export const metadata = {
+  title: 'Vocalaysia - Vote for Your Favorite VocaloP',
+  description: 'A fun voting app to find out the favorite VocaloP in Malaysia!',
+};
+
+export const dynamic = 'force-dynamic'; // Ensure this page is always fresh
+export const fetchCache = 'force-no-store'; // Disable caching for this page          
