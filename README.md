@@ -1,5 +1,5 @@
 # Vocalaysia
-A Social Experiment Regarding Vocaloid in Malaysia
+A Social Experiment Regarding Vocaloid in Malaysia. 11.4k views on TikTok with over 2000 vote submissions from all over Malaysia!
 ## Overview
 
 Vocalaysia is a fun and interactive web application built to determine the most popular Vocaloid Producer (VocaloP) in Malaysia, based on votes from different states. It's a social experiment designed to engage the Vocaloid community and visualize regional preferences.
